@@ -1,0 +1,35 @@
+{
+    "Main": {
+        "title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1",
+                "label": "Titre de la playlist",
+                "placeholder": "Titre de la playlist"
+            }
+        },
+        "author": {
+            "type": "Text",
+            "config": {
+                "label": "Auteur.trice",
+                "placeholder": "Eunice Tchitchiama"
+            }
+        },
+        "thumbnail_photo": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Miniature"
+            }
+        },
+        "url": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Lien vers la playlist",
+                "placeholder": "https://soundcloud.com"
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "Main": {
+        "uid": {
+            "type": "UID",
+            "config": {
+                "label": "Identifiant de l'article",
+                "placeholder": "Nom du lien de l'article (ex: blm-protest-france)"
+            }
+        },
+        "title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1",
+                "label": "Titre",
+                "placeholder": "Titre de l'article"
+            }
+        },
+        "subtitle": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading2",
+                "label": "Sous titre",
+                "placeholder": "Sous titre de l'article"
+            }
+        },
+        "date": {
+            "type": "Date",
+            "config": {
+                "label": "Date de l'article",
+                "placeholder": "Date de publication de l'article (un article par date)"
+            }
+        },
+        "thumbnail_photo": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Miniature"
+            }
+        },
+        "cover_photo": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Photo de couverture d'article"
+            }
+        },
+        "author": {
+            "type": "Text",
+            "config": {
+                "label": "Auteur.trice",
+                "placeholder": "Eunice Tchitchiama"
+            }
+        },
+        "categories": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "category": {
+                        "type": "Text",
+                        "config": {
+                            "label": "Catégorie",
+                            "placeholder": "Catégorie dans laquelle se trouve l'article"
+                        }
+                    }
+                },
+                "label": "Catégories"
+            }
+        }
+    },
+    "Contenu": {
+        "content": {
+            "type": "StructuredText",
+            "config": {
+                "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
+                "allowTargetBlank": true,
+                "label": "Contenu de l'article",
+                "placeholder": "Contenu de l'article",
+                "labels": [
+                    "image-left",
+                    "image-right"
+                ]
+            }
+        }
+    }
+}

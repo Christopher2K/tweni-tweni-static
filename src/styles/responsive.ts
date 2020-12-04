@@ -1,0 +1,35 @@
+import { css, SerializedStyles } from '@emotion/react'
+import { CSSInterpolation } from '@emotion/serialize'
+
+export const breakpoint = {
+  toDesktop: 768,
+}
+
+export type Breakpoint = typeof breakpoint
+
+export const mobileMediaQuery =
+  'max-width: ' + breakpoint.toDesktop.toString() + 'px'
+export const desktopMediaQuery =
+  'min-width:' + (breakpoint.toDesktop + 1).toString() + 'px'
+
+export function mobileStyle(
+  template: TemplateStringsArray,
+  ...args: CSSInterpolation[]
+): SerializedStyles {
+  return css`
+    @media screen and (${mobileMediaQuery}) {
+      ${css(template, ...args)}
+    }
+  `
+}
+
+export function desktopStyle(
+  template: TemplateStringsArray,
+  ...args: CSSInterpolation[]
+): SerializedStyles {
+  return css`
+    @media screen and (${desktopMediaQuery}) {
+      ${css(template, ...args)}
+    }
+  `
+}

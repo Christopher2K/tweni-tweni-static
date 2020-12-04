@@ -1,0 +1,12 @@
+{
+    "Main": {
+        "legal_notice": {
+            "type": "StructuredText",
+            "config": {
+                "multi": "paragraph, heading2, strong, em, hyperlink, list-item, o-list-item",
+                "allowTargetBlank": true,
+                "label": "Mentions légales"
+            }
+        }
+    }
+}
