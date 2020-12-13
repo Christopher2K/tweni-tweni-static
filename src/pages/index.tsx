@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
 
-const IndexPage: FC = () => <div>Hello</div>
+const Index: FC = () => <div>Hello</div>
 
-export default IndexPage
+export default Index

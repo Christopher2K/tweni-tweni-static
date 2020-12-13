@@ -1,12 +1,12 @@
 {
-    "Main": {
-        "text": {
-            "type": "StructuredText",
-            "config": {
-                "multi": "paragraph",
-                "allowTargetBlank": true,
-                "label": "Texte"
-            }
-        }
+  "Main": {
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Texte"
+      }
     }
+  }
 }

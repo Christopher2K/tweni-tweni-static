@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Tweni Tweni',
@@ -5,6 +7,8 @@ module.exports = {
     author: 'Eunice Tchitchiama',
   },
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-typescript',
@@ -16,6 +20,24 @@ module.exports = {
     },
     'gatsby-plugin-typescript-checker',
     'gatsby-plugin-emotion',
+    {
+      resolve:'gatsby-plugin-root-import',
+      options: {
+        assets: path.join(__dirname, 'src/assets'),
+        components: path.join(__dirname, 'src/components'),
+        hooks: path.join(__dirname, 'src/hooks'),
+        styles: path.join(__dirname, 'src/styles'),
+        utils: path.join(__dirname, 'src/utils'),
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    },
     {
       resolve: 'gatsby-source-prismic',
       options: {

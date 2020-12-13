@@ -1,95 +1,95 @@
 {
-    "Main": {
-        "enabled": {
-            "type": "Boolean",
-            "config": {
-                "placeholder_false": "Indisponible dans l'application",
-                "placeholder_true": "Disponible dans l'application",
-                "default_value": false,
-                "label": "Inspiration activée"
-            }
-        },
-        "title": {
-            "type": "StructuredText",
-            "config": {
-                "single": "heading1",
-                "label": "Titre de l'inspiration",
-                "placeholder": "Titre de l'inspiration"
-            }
-        },
-        "artist": {
+  "Main": {
+    "enabled": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Indisponible dans l'application",
+        "placeholder_true": "Disponible dans l'application",
+        "default_value": false,
+        "label": "Inspiration activée"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Titre de l'inspiration",
+        "placeholder": "Titre de l'inspiration"
+      }
+    },
+    "artist": {
+      "type": "Text",
+      "config": {
+        "label": "Artiste",
+        "placeholder": "Nom de l'artiste"
+      }
+    },
+    "date": {
+      "type": "Date",
+      "config": {
+        "label": "Date dans le calendrier",
+        "placeholder": "Date de l'inspiration dans le calendrier (une inspiration par date)"
+      }
+    },
+    "subject": {
+      "type": "Text",
+      "config": {
+        "label": "Thème",
+        "placeholder": "Thème de l'inspiration"
+      }
+    },
+    "color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur"
+      }
+    },
+    "categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "category": {
             "type": "Text",
             "config": {
-                "label": "Artiste",
-                "placeholder": "Nom de l'artiste"
+              "label": "Catégorie",
+              "placeholder": "Catégorie dans laquelle se trouve l'inspiration"
             }
+          }
         },
-        "date": {
-            "type": "Date",
+        "label": "Catégories"
+      }
+    },
+    "carousel": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "photo": {
+            "type": "Image",
             "config": {
-                "label": "Date dans le calendrier",
-                "placeholder": "Date de l'inspiration dans le calendrier (une inspiration par date)"
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Photo"
             }
-        },
-        "subject": {
+          },
+          "caption": {
             "type": "Text",
             "config": {
-                "label": "Thème",
-                "placeholder": "Thème de l'inspiration"
+              "label": "Légende",
+              "placeholder": "Légende de la photo"
             }
+          }
         },
-        "color": {
-            "type": "Color",
-            "config": {
-                "label": "Couleur"
-            }
-        },
-        "categories": {
-            "type": "Group",
-            "config": {
-                "fields": {
-                    "category": {
-                        "type": "Text",
-                        "config": {
-                            "label": "Catégorie",
-                            "placeholder": "Catégorie dans laquelle se trouve l'inspiration"
-                        }
-                    }
-                },
-                "label": "Catégories"
-            }
-        },
-        "carousel": {
-            "type": "Group",
-            "config": {
-                "fields": {
-                    "photo": {
-                        "type": "Image",
-                        "config": {
-                            "constraint": {},
-                            "thumbnails": [],
-                            "label": "Photo"
-                        }
-                    },
-                    "caption": {
-                        "type": "Text",
-                        "config": {
-                            "label": "Légende",
-                            "placeholder": "Légende de la photo"
-                        }
-                    }
-                },
-                "label": "Carousel"
-            }
-        },
-        "description": {
-            "type": "StructuredText",
-            "config": {
-                "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
-                "allowTargetBlank": true,
-                "label": "Description",
-                "placeholder": "Description de l'inspiration"
-            }
-        }
+        "label": "Carousel"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Description",
+        "placeholder": "Description de l'inspiration"
+      }
     }
+  }
 }

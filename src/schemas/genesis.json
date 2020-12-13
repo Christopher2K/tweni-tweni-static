@@ -1,48 +1,48 @@
 {
-    "Main": {
-        "contact": {
-            "type": "StructuredText",
+  "Main": {
+    "contact": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, hyperlink",
+        "allowTargetBlank": true,
+        "label": "Liens de contact"
+      }
+    },
+    "team": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "member": {
+            "type": "Text",
             "config": {
-                "multi": "paragraph, hyperlink",
-                "allowTargetBlank": true,
-                "label": "Liens de contact"
+              "label": "Membre"
             }
+          }
         },
-        "team": {
-            "type": "Group",
+        "label": "Equipe"
+      }
+    },
+    "credits": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "credit": {
+            "type": "Text",
             "config": {
-                "fields": {
-                    "member": {
-                        "type": "Text",
-                        "config": {
-                            "label": "Membre"
-                        }
-                    }
-                },
-                "label": "Equipe"
+              "label": "Credit"
             }
+          }
         },
-        "credits": {
-            "type": "Group",
-            "config": {
-                "fields": {
-                    "credit": {
-                        "type": "Text",
-                        "config": {
-                            "label": "Credit"
-                        }
-                    }
-                },
-                "label": "Credits"
-            }
-        },
-        "main_text": {
-            "type": "StructuredText",
-            "config": {
-                "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item",
-                "allowTargetBlank": true,
-                "label": "Texte principal"
-            }
-        }
+        "label": "Credits"
+      }
+    },
+    "main_text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Texte principal"
+      }
     }
+  }
 }

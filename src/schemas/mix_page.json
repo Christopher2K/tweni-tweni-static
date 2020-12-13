@@ -1,11 +1,11 @@
 {
-    "Main": {
-        "text": {
-            "type": "StructuredText",
-            "config": {
-                "multi": "paragraph",
-                "label": "Texte"
-            }
-        }
+  "Main": {
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Texte"
+      }
     }
+  }
 }

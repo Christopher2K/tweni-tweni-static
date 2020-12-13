@@ -36,7 +36,10 @@ export const theme = {
       desktop: '16rem',
       mobile: '12rem',
     },
-    navHeight: function () {
+    navHeight: function (): {
+      desktop: string
+      mobile: string
+    } {
       return {
         desktop: `calc((${this.padding.top.desktop}+${this.padding.bottom.desktop})+${this.itemSize.desktop})`,
         mobile: `calc((${this.padding.top.mobile}+${this.padding.bottom.mobile})+${this.itemSize.mobile})`,
