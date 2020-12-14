@@ -6,7 +6,7 @@ import { PageRoot } from 'components/PageRoot'
 import { ThumbnailGrid } from 'components/ThumbnailGrid'
 import { ThumbnailGridItem } from 'components/ThumbnailGridItem'
 
-interface MixProps extends PageProps {
+interface MixPageProps extends PageProps {
   data: {
     prismicMixPage: {
       data: {
@@ -29,7 +29,7 @@ interface MixProps extends PageProps {
   }
 }
 
-const Mix: FC<MixProps> = ({ data }) => {
+const MixPage: FC<MixPageProps> = ({ data }) => {
   return (
     <PageRoot>
       <PageDescription>{data.prismicMixPage.data.text.text}</PageDescription>
@@ -78,4 +78,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Mix
+export default MixPage

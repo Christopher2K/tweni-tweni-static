@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
+import { graphql, PageProps } from 'gatsby'
 
 import { PageRoot } from 'components/PageRoot'
 import { desktopStyle } from 'styles/responsive'
@@ -45,16 +46,42 @@ const Content = styled.div`
   }
 `
 
-export const LegalNotice: FC = () => {
-  const { legalNoticeData } = {
-    legalNoticeData: '',
+interface LegalNoticePageProps extends PageProps {
+  data: {
+    prismicLegalNotice: {
+      data: {
+        legal_notice: {
+          html: string
+        }
+      }
+    }
   }
+}
 
+const LegalNoticePage: FC<LegalNoticePageProps> = ({ data }) => {
   return (
     <Root>
       <Wrapper>
-        <Content dangerouslySetInnerHTML={{ __html: legalNoticeData }} />
+        <Content
+          dangerouslySetInnerHTML={{
+            __html: data.prismicLegalNotice.data.legal_notice.html,
+          }}
+        />
       </Wrapper>
     </Root>
   )
 }
+
+export const pageQuery = graphql`
+  query LegalNoticePageQuery {
+    prismicLegalNotice {
+      data {
+        legal_notice {
+          html
+        }
+      }
+    }
+  }
+`
+
+export default LegalNoticePage
