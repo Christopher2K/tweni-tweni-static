@@ -25,5 +25,5 @@ jobs:
       - name: Netlify Deploy
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
-        run: netlify deploy --dir=public --message "$GITHUB_REF_NAME $GITHUB_SHA_SHORT $(git log -1 --pretty=format:"%s")" --alias $GITHUB_REF_NAME --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --dir=public --message "$GITHUB_SHA_SHORT $(git log -1 --pretty=format:"%s")" --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
