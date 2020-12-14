@@ -22,6 +22,11 @@ export function useWindowSize(): UseWindowSize {
   }, [])
 
   useEffect(() => {
+    setSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
+
     window.addEventListener('resize', getWindowsBoundingBox)
     return () => window.removeEventListener('resize', getWindowsBoundingBox)
   }, [])
