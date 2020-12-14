@@ -27,3 +27,12 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: netlify deploy --dir=public --message "$GITHUB_SHA_SHORT $(git log -1 --pretty=format:"%s")" --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod
+      - name: Tag latest changes
+        run: git tag -f latest
+      - name: Push tags
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          force: true
+          tags: true
+          branch: ${{ github.ref }}

@@ -50,7 +50,7 @@ export const SEO: FC<SEOProps> = ({
   const pageTitle = title ?? site.siteMetadata.title
   const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
 
-  const metaImage = image ?? '/share.png'
+  const metaImage = image ?? `${site.siteMetadata.url}/share.png`
 
   return (
     <Helmet
