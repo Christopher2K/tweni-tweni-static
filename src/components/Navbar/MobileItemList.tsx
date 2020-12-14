@@ -1,5 +1,5 @@
 import React, { FC, ComponentType } from 'react'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
@@ -54,7 +54,7 @@ const StyledMobileMenuButton = styled(MobileMenuButton)`
   margin-bottom: ${props => props.theme.nav.padding.bottom.mobile};
 `
 
-const LogoLink = styled(Link)`
+const LogoLink = styled(AniLink)`
   display: block;
 `
 
@@ -66,7 +66,8 @@ const StyledLogo = styled(Logo as ComponentType)`
   }
 `
 
-const Item = styled(Link)`
+// eslint-disable-next-line
+const Item = styled(AniLink as ComponentType<Record<any, any>>)`
   line-height: 44px;
   font-size: 3.1rem;
   color: inherit;
@@ -110,23 +111,39 @@ export const MobileItemList: FC<MobileItemListProps> = ({
         </LogoLink>
       </Header>
       <Items>
-        <Item to="/" activeClassName="active" onClick={onMenuButtonClicked}>
+        <Item
+          to="/"
+          activeClassName="active"
+          onClick={onMenuButtonClicked}
+          fade
+          duration={0.4}
+        >
           Articles
         </Item>
         <Item
           to="/inspirations"
           activeClassName="active"
           onClick={onMenuButtonClicked}
+          fade
+          duration={0.4}
         >
           Nos inspirations
         </Item>
-        <Item to="/mix" activeClassName="active" onClick={onMenuButtonClicked}>
+        <Item
+          to="/mix"
+          activeClassName="active"
+          onClick={onMenuButtonClicked}
+          fade
+          duration={0.4}
+        >
           Nos mix
         </Item>
         <Item
           to="/genese"
           activeClassName="active"
           onClick={onMenuButtonClicked}
+          fade
+          duration={0.4}
         >
           Genèse
         </Item>

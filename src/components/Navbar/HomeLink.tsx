@@ -1,5 +1,5 @@
 import React, { FC, ComponentType } from 'react'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from '@emotion/styled'
 import { useTheme } from '@emotion/react'
 
@@ -31,7 +31,10 @@ const Logo = styled(RawLogo as ComponentType)`
   }
 `
 
-const Root = styled(Link)<{ activeScaleFactor: number }>`
+// eslint-disable-next-line
+const Root = styled(AniLink as ComponentType<Record<any, any>>)<{
+  activeScaleFactor: number
+}>`
   --animation-length: ${props => props.theme.nav.animationDuration};
 
   display: block;
@@ -91,7 +94,13 @@ export const HomeLink: FC = () => {
   const activeScaleFactor = maxLogoWidth / currentLogoWidth
 
   return (
-    <Root to="/" activeClassName="active" activeScaleFactor={activeScaleFactor}>
+    <Root
+      to="/"
+      activeClassName="active"
+      activeScaleFactor={activeScaleFactor}
+      fade
+      duration={0.4}
+    >
       <Logo />
     </Root>
   )

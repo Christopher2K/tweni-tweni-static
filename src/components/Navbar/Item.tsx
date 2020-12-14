@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { desktopStyle, mobileStyle } from 'styles/responsive'
 
@@ -23,7 +23,7 @@ const Root = styled.div<{ anchor: 'left' | 'right' }>`
   `}
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(AniLink)`
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
@@ -52,7 +52,7 @@ type ItemProps = Readonly<{
 export const Item: FC<ItemProps> = ({ to, name, anchor }) => {
   return (
     <Root anchor={anchor}>
-      <StyledLink to={to} activeClassName="active">
+      <StyledLink to={to} activeClassName="active" fade duration={0.4}>
         {name}
       </StyledLink>
     </Root>

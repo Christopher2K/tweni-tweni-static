@@ -52,6 +52,12 @@ module.exports = {
           mix: require('./src/schemas/mix.json'),
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/Layout/index.tsx`).Layout
+      }
     }
   ],
 }
