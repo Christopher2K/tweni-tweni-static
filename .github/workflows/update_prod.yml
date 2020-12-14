@@ -1,22 +1,19 @@
-name: Prod Workflow
+name: Rebuild the website on new data
 
-on:
-  push:
-    branches:
-      - master
+on: workflow_dispatch
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: 'latest'
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
       - name: Project dependencies
         run: yarn install
-      - name: Lint code
-        run: yarn preflight
       - name: Build code
         run: yarn build
       - uses: FranzDiebold/github-env-vars-action@v1.3.0
