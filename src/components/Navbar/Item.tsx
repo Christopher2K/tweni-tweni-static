@@ -52,7 +52,7 @@ type ItemProps = Readonly<{
 export const Item: FC<ItemProps> = ({ to, name, anchor }) => {
   return (
     <Root anchor={anchor}>
-      <StyledLink to={to} activeClassName="active" fade duration={0.4}>
+      <StyledLink to={to} activeClassName="active" fade duration={0.1}>
         {name}
       </StyledLink>
     </Root>

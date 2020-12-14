@@ -116,7 +116,7 @@ export const MobileItemList: FC<MobileItemListProps> = ({
           activeClassName="active"
           onClick={onMenuButtonClicked}
           fade
-          duration={0.4}
+          duration={0.1}
         >
           Articles
         </Item>
@@ -125,7 +125,7 @@ export const MobileItemList: FC<MobileItemListProps> = ({
           activeClassName="active"
           onClick={onMenuButtonClicked}
           fade
-          duration={0.4}
+          duration={0.1}
         >
           Nos inspirations
         </Item>
@@ -134,7 +134,7 @@ export const MobileItemList: FC<MobileItemListProps> = ({
           activeClassName="active"
           onClick={onMenuButtonClicked}
           fade
-          duration={0.4}
+          duration={0.1}
         >
           Nos mix
         </Item>
@@ -143,7 +143,7 @@ export const MobileItemList: FC<MobileItemListProps> = ({
           activeClassName="active"
           onClick={onMenuButtonClicked}
           fade
-          duration={0.4}
+          duration={0.1}
         >
           Genèse
         </Item>

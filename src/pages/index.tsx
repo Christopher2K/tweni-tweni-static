@@ -54,7 +54,7 @@ const Homepage: FC<HomepageProps> = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query MyQuery {
+  query HomepageQuery {
     allPrismicArticle {
       nodes {
         uid

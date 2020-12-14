@@ -42,7 +42,7 @@ const Copyright = styled.span`
 export const Footer: FC = () => {
   return (
     <Root>
-      <LegalNoticeLink to="/mentions-legales" fade duration={0.4}>
+      <LegalNoticeLink to="/mentions-legales" fade duration={0.1}>
         Mentions légales
       </LegalNoticeLink>
       <Copyright>All rights reserved ©2020</Copyright>

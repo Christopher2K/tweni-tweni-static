@@ -36,4 +36,9 @@ export const global = css`
       color: ${theme.colors.black};
     }
   }
+
+  .tl-edges {
+    flex: 1;
+    display: flex;
+  }
 `

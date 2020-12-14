@@ -99,7 +99,7 @@ export const HomeLink: FC = () => {
       activeClassName="active"
       activeScaleFactor={activeScaleFactor}
       fade
-      duration={0.4}
+      duration={0.1}
     >
       <Logo />
     </Root>
