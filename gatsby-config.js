@@ -5,6 +5,8 @@ module.exports = {
     title: 'Tweni Tweni',
     description: 'Calendrier Restrospectif',
     author: 'Eunice Tchitchiama',
+    url: 'https://twenitweni.fr',
+    twitterUsername: 'tchm_design',
   },
   plugins: [
     'gatsby-plugin-sharp',

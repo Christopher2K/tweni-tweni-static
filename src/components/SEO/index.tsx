@@ -1,29 +1,34 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, { FC } from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const SEO: FC<{
+interface SEOProps {
+  title?: string
   description?: string
-  lang?: string
   meta?: Array<{
     name: string
     content: string
   }>
-  title: string
-}> = ({ description = '', lang = 'fr', meta = [], title }) => {
+  article?: boolean
+  pathname?: string
+  image?: string
+}
+
+export const SEO: FC<SEOProps> = ({
+  title,
+  description,
+  meta = [],
+  article = false,
+  pathname,
+  image,
+}) => {
   const { site } = useStaticQuery<{
     site: {
       siteMetadata: {
         title: string
         description: string
         author: string
+        url: string
       }
     }
   }>(
@@ -34,22 +39,26 @@ const SEO: FC<{
             title
             description
             author
+            url
           }
         }
       }
     `,
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description ?? site.siteMetadata.description
+  const pageTitle = title ?? site.siteMetadata.title
+  const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
+
+  const metaImage = image ?? '/share.png'
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: 'fr',
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      title={pageTitle}
+      link={canonical ? [{ rel: 'canonical', href: canonical }] : []}
       meta={[
         {
           name: 'description',
@@ -60,20 +69,24 @@ const SEO: FC<{
           content: title,
         },
         {
+          property: 'og:image',
+          content: metaImage,
+        },
+        {
           property: 'og:description',
           content: metaDescription,
         },
         {
           property: 'og:type',
-          content: 'website',
+          content: article ? 'article' : 'website',
         },
         {
           name: 'twitter:card',
-          content: 'summary',
+          content: 'summary_large_image',
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata?.author || '',
+          content: site.siteMetadata.author,
         },
         {
           name: 'twitter:title',
@@ -83,9 +96,11 @@ const SEO: FC<{
           name: 'twitter:description',
           content: metaDescription,
         },
+        {
+          name: 'og:image',
+          content: metaImage,
+        },
       ].concat(meta)}
     />
   )
 }
-
-export default SEO

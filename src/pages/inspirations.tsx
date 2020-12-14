@@ -3,6 +3,7 @@ import { graphql, PageProps } from 'gatsby'
 import { format, parse } from 'date-fns'
 
 import { PageDescription } from 'components/PageDescription'
+import { SEO } from 'components/SEO'
 import { PageRoot } from 'components/PageRoot'
 import { Calendar } from 'components/Calendar'
 
@@ -67,6 +68,10 @@ const InspirationsPage: FC<InspirationsPageProps> = ({ data }) => {
 
   return (
     <PageRoot>
+      <SEO
+        title="Tweni Tweni - Le calendrier des inspirations"
+        description="Des artistes nous ont influencé tout au long de l'année, découvrez les dans ce calendrier 2020 !"
+      />
       <PageDescription>
         {data.prismicInspirationPage.data.text.text}
       </PageDescription>

@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import { graphql, PageProps } from 'gatsby'
 
+import { SEO } from 'components/SEO'
 import { PageRoot } from 'components/PageRoot'
 import { desktopStyle } from 'styles/responsive'
 
@@ -61,6 +62,10 @@ interface LegalNoticePageProps extends PageProps {
 const LegalNoticePage: FC<LegalNoticePageProps> = ({ data }) => {
   return (
     <Root>
+      <SEO
+        title="Tweni Tweni - Mentions légales"
+        description="Les mentions légales du site"
+      />
       <Wrapper>
         <Content
           dangerouslySetInnerHTML={{

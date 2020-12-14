@@ -18,14 +18,10 @@ export const global = css`
     transition: background-color 200ms linear;
   }
 
-  #root {
+  body {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-  }
-
-  #root,
-  body {
     min-height: 100vh;
   }
 

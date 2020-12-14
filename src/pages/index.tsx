@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { format, parse } from 'date-fns'
 
+import { SEO } from 'components/SEO'
 import { ThumbnailGrid } from 'components/ThumbnailGrid'
 import { ThumbnailGridItem } from 'components/ThumbnailGridItem'
 
@@ -28,6 +29,10 @@ interface HomepageProps extends PageProps {
 const Homepage: FC<HomepageProps> = ({ data }) => {
   return (
     <ThumbnailGrid>
+      <SEO
+        title="Tweni Tweni - Le Blog Culturel"
+        description="Découvez les thématiques que nous abordons au travers de nos articles"
+      />
       {data.allPrismicArticle.nodes.map(({ data: article, uid }) => {
         const categoryText = article.categories
           .map(({ category }) => category.toUpperCase())

@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
-import { desktopStyle } from 'styles/responsive'
 
+import { SEO } from 'components/SEO'
+import { desktopStyle } from 'styles/responsive'
 import contactImage from 'assets/images/others/contact.png'
 
 const Root = styled.div`
@@ -47,6 +48,10 @@ const Root = styled.div`
 
 const Contact: FC = () => (
   <Root>
+    <SEO
+      title="Tweni Tweni - Nous contacter"
+      description="Contactez nous pour tout type de demandes !"
+    />
     <img src={contactImage} alt="Hello!" />
     <a href="mailto:hello@twenitweni.fr">hello@twenitweni.fr</a>
     <a

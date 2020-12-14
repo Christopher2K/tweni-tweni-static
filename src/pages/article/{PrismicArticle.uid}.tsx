@@ -4,6 +4,7 @@ import { format, parse } from 'date-fns'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
+import { SEO } from 'components/SEO'
 import { desktopStyle } from 'styles/responsive'
 import linkedInIcon from 'assets/images/others/linkedin.png'
 import mailIcon from 'assets/images/others/mail.png'
@@ -211,7 +212,7 @@ interface ArticlePageProps extends PageProps {
   }
 }
 
-const ArticlePage: FC<ArticlePageProps> = ({ data }) => {
+const ArticlePage: FC<ArticlePageProps> = ({ data, location }) => {
   const { prismicArticle: article } = data
 
   const clearSharingUrl = `https://twenitweni.fr/article/${article.uid}`
@@ -251,6 +252,12 @@ const ArticlePage: FC<ArticlePageProps> = ({ data }) => {
 
   return (
     <Root>
+      <SEO
+        title={`Tweni Tweni - ${article.data.title.text}`}
+        description={clearSharingText}
+        image={article.data.cover_photo.url}
+        pathname={location.pathname}
+      />
       <CoverPhoto
         src={article.data.cover_photo.url}
         alt={article.data.title.text}

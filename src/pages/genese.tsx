@@ -4,6 +4,7 @@ import { graphql, PageProps } from 'gatsby'
 
 import { PageRoot } from 'components/PageRoot'
 import { desktopStyle } from 'styles/responsive'
+import { SEO } from 'components/SEO'
 
 const Root = styled(PageRoot)`
   display: flex;
@@ -109,6 +110,10 @@ interface GenesisPageProps extends PageProps {
 const GenesisPage: FC<GenesisPageProps> = ({ data: { prismicGenesis } }) => {
   return (
     <Root>
+      <SEO
+        title="Tweni Tweni - La genèse"
+        description="Découvrez comment notre projet a commencé..."
+      />
       <Left
         dangerouslySetInnerHTML={{ __html: prismicGenesis.data.contact.html }}
       />
