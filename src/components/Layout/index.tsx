@@ -39,6 +39,8 @@ export const Layout: FC<PageProps> = ({ children, location }) => {
   const { width: windowWidth } = useWindowSize()
   const { match: desktopScreen } = useMediaQuery(`(${desktopMediaQuery})`)
 
+  console.log('desktopScreen', desktopScreen)
+  console.log('windowWidth', windowWidth)
   // Computed
   const currentContentWidth = windowWidth > 1920 ? 1920 : windowWidth
   const isHomepage = location.pathname === '/'
