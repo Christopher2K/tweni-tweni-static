@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 import { MobileMenuButton } from './MobileMenuButton'
-import Logo from 'assets/images/logo.svg'
+import Logo from 'assets/images/svgs/logo.svg'
 
 const containerStyle = css`
   width: 100%;

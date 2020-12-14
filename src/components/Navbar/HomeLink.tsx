@@ -3,7 +3,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from '@emotion/styled'
 import { useTheme } from '@emotion/react'
 
-import RawLogo from 'assets/images/logo.svg'
+import RawLogo from 'assets/images/svgs/logo.svg'
 import { desktopStyle, desktopMediaQuery } from 'styles/responsive'
 import { useWindowSize } from 'hooks/useWindowSize'
 import { useMediaQuery } from 'hooks/useMediaQuery'

@@ -7,8 +7,8 @@ interface UseWindowSize {
 
 export function useWindowSize(): UseWindowSize {
   const [size, setSize] = useState<UseWindowSize>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: typeof window !== 'undefined' ? window.innerWidth : 1920,
+    height: typeof window !== 'undefined' ? window.innerHeight : 1080,
   })
 
   const getWindowsBoundingBox: (

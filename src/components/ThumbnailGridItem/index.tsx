@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
@@ -57,7 +58,7 @@ const RootLink = styled.a`
   ${linkStyle}
 `
 
-const StyledLink = styled.a`
+const StyledLink = styled(AniLink)`
   ${linkStyle}
 `
 
@@ -81,7 +82,9 @@ export const ThumbnailGridItem: FC<ThumbnailGridItemProps> = ({
   appLink,
 }) => {
   const Root = appLink ? StyledLink : RootLink
-  const linkProps = appLink ? { to: url } : { href: url, target: '_blank' }
+  const linkProps = appLink
+    ? { to: url, fade: true, duration: 0.3 }
+    : { href: url, target: '_blank' }
 
   return (
     <Root {...linkProps}>
