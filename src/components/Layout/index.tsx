@@ -42,8 +42,6 @@ export const Layout: FC<PageProps> = ({ children, location }) => {
 
   const [homepageOffset, setHompageOffset] = useState(0)
 
-  console.log('desktopScreen', desktopScreen)
-  console.log('windowWidth', windowWidth)
   // Computed
   const isHomepage = location.pathname === '/'
 

@@ -28,7 +28,7 @@ const CarouselRow = styled.div<{ activeImageIndex: number }>`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  width: 100%;
+  min-width: 100%;
   transition: 100ms transform linear;
   ${props => css`
     transform: translateX(
@@ -142,8 +142,8 @@ export const Container: FC<ContainerProps> = ({
   [])
 
   return (
-    <Carousel>
-      <CarouselRow activeImageIndex={activeImageIndex} {...swipeHandlers}>
+    <Carousel {...swipeHandlers}>
+      <CarouselRow activeImageIndex={activeImageIndex}>
         <CarouselButton side="left" onClick={onPrevClicked} />
         {images.map((cp, index) => (
           <CarouselPhoto key={index}>
