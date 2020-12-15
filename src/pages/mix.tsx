@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allPrismicMix {
+    allPrismicMix(sort: { fields: [first_publication_date], order: DESC }) {
       nodes {
         id
         data {

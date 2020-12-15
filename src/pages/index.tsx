@@ -60,7 +60,7 @@ const Homepage: FC<HomepageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query HomepageQuery {
-    allPrismicArticle {
+    allPrismicArticle(sort: { fields: [data___date], order: DESC }) {
       nodes {
         uid
         data {

@@ -90,7 +90,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allPrismicInspiration {
+    allPrismicInspiration(sort: { fields: [data___date], order: ASC }) {
       nodes {
         id
         data {
