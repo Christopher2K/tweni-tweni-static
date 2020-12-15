@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 import React from 'react'
-import { ThemeProvider } from '@emotion/react'
+import { ThemeProvider } from 'styled-components'
 
 import { Layout } from './src/components/Layout'
 import { theme } from './src/styles/theme'

@@ -1,6 +1,5 @@
 import React, { FC, useCallback, useState } from 'react'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 import { useSwipeable } from 'react-swipeable'
 
 import DevelopIcon from 'assets/images/svgs/develop.svg'

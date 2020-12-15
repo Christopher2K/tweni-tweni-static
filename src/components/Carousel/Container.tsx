@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/indent */
 import React, { FC, useCallback, useRef, useState } from 'react'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 import type { SwipeableHandlers } from 'react-swipeable'
 
 import { desktopMediaQuery, desktopStyle } from 'styles/responsive'

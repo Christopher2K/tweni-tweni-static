@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { desktopStyle, mobileStyle } from 'styles/responsive'

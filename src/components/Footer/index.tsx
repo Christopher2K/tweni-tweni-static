@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 import { desktopStyle } from 'styles/responsive'
 
 const Root = styled.div`

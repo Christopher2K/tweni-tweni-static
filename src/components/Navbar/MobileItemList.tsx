@@ -1,7 +1,6 @@
 import React, { FC, ComponentType } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 
 import { MobileMenuButton } from './MobileMenuButton'
 import Logo from 'assets/images/svgs/logo.svg'
@@ -66,8 +65,7 @@ const StyledLogo = styled(Logo as ComponentType)`
   }
 `
 
-// eslint-disable-next-line
-const Item = styled(AniLink as ComponentType<Record<any, any>>)`
+const Item = styled(AniLink)`
   line-height: 44px;
   font-size: 3.1rem;
   color: inherit;

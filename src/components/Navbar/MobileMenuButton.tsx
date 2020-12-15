@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 
 const Button = styled.button<{ menuIsOpen: boolean }>`
   background-color: transparent;

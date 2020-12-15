@@ -1,8 +1,7 @@
 import React, { FC, useCallback } from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { format, parse } from 'date-fns'
-import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+import styled, { css } from 'styled-components'
 
 import { SEO } from 'components/SEO'
 import { desktopStyle } from 'styles/responsive'

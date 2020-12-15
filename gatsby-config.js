@@ -9,8 +9,6 @@ module.exports = {
     twitterUsername: 'tchm_design',
   },
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-typescript',
@@ -21,7 +19,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-typescript-checker',
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-styled-components',
     {
       resolve:'gatsby-plugin-root-import',
       options: {

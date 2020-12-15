@@ -1,6 +1,5 @@
 import React, { FC, useCallback, useState } from 'react'
-import styled from '@emotion/styled'
-import { css, Global } from '@emotion/react'
+import styled, { createGlobalStyle } from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
 
 import { Item } from './Item'
@@ -10,7 +9,7 @@ import { MobileItemList } from './MobileItemList'
 import { Responsive } from 'components/Responsive'
 import { desktopStyle } from 'styles/responsive'
 
-const menuTransition = css`
+const GlobalMenuTransitions = createGlobalStyle`
   .menu-enter {
     opacity: 0;
   }
@@ -40,8 +39,8 @@ const Root = styled.div`
   box-sizing: border-box;
 
   width: 100%;
-  padding: ${({ theme }) =>
-    `${theme.nav.padding.top.mobile} ${theme.nav.padding.sides.mobile} ${theme.nav.padding.bottom.mobile} ${theme.nav.padding.sides.mobile}`};
+  padding: ${props =>
+    `${props.theme.nav.padding.top.mobile} ${props.theme.nav.padding.sides.mobile} ${props.theme.nav.padding.bottom.mobile} ${props.theme.nav.padding.sides.mobile}`};
 
   ${props => desktopStyle`
     padding: ${props.theme.nav.padding.top.desktop} ${props.theme.nav.padding.sides.desktop} ${props.theme.nav.padding.bottom.desktop} ${props.theme.nav.padding.sides.desktop}
@@ -57,7 +56,7 @@ export const Navbar: FC = () => {
 
   return (
     <Root>
-      <Global styles={menuTransition} />
+      <GlobalMenuTransitions />
       <Responsive.Desktop>
         <Item name="Génèse" to="/genese" anchor="left" />
         <Item name="Nos inspirations" to="/inspirations" anchor="left" />

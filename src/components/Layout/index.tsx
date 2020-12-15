@@ -1,7 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import { PageProps } from 'gatsby'
-import { Global, useTheme } from '@emotion/react'
-import styled from '@emotion/styled'
+import styled, { createGlobalStyle, useTheme } from 'styled-components'
 
 import { Navbar } from 'components/Navbar'
 import { Footer } from 'components/Footer'
@@ -10,6 +9,8 @@ import { desktopMediaQuery } from 'styles/responsive'
 import { useWindowSize } from 'hooks/useWindowSize'
 import { useMediaQuery } from 'hooks/useMediaQuery'
 import { toPixels, getLogoHeightForGivenWidth } from 'utils/layout'
+
+const GlobalStyle = createGlobalStyle`${global}`
 
 const Root = styled.div`
   display: flex;
@@ -39,24 +40,29 @@ export const Layout: FC<PageProps> = ({ children, location }) => {
   const { width: windowWidth } = useWindowSize()
   const { match: desktopScreen } = useMediaQuery(`(${desktopMediaQuery})`)
 
+  const [homepageOffset, setHompageOffset] = useState(0)
+
   console.log('desktopScreen', desktopScreen)
   console.log('windowWidth', windowWidth)
   // Computed
-  const currentContentWidth = windowWidth > 1920 ? 1920 : windowWidth
   const isHomepage = location.pathname === '/'
-  const _navSidePaddingValue = toPixels(
-    desktopScreen
-      ? theme.nav.padding.sides.desktop
-      : theme.nav.padding.sides.mobile,
-  )
-  const _currentLogoHeight = getLogoHeightForGivenWidth(
-    currentContentWidth - _navSidePaddingValue * 2,
-  )
-  const homepageOffset = _currentLogoHeight + toPixels('2rem')
+
+  useEffect(() => {
+    const currentContentWidth = windowWidth > 1920 ? 1920 : windowWidth
+    const _navSidePaddingValue = toPixels(
+      desktopScreen
+        ? theme.nav.padding.sides.desktop
+        : theme.nav.padding.sides.mobile,
+    )
+    const _currentLogoHeight = getLogoHeightForGivenWidth(
+      currentContentWidth - _navSidePaddingValue * 2,
+    )
+    setHompageOffset(_currentLogoHeight + toPixels('2rem'))
+  }, [windowWidth, desktopScreen])
 
   return (
     <Root>
-      <Global styles={global} />
+      <GlobalStyle />
       <Navbar />
       <PageContainer isHomepage={isHomepage} marginTop={homepageOffset}>
         {children}

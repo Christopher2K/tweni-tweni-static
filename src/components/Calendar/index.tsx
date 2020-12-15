@@ -1,8 +1,17 @@
 import React, { FC, useState } from 'react'
-import styled from '@emotion/styled'
+import styled, { createGlobalStyle, css } from 'styled-components'
 import { DayFrame } from './DayFrame'
 import { desktopStyle } from 'styles/responsive'
-import { css, Global } from '@emotion/react'
+
+const GlobalColor = createGlobalStyle<{ inspirationColor?: string }>`
+  :root {
+    ${props =>
+      props.inspirationColor &&
+      css`
+        background-color: ${props.inspirationColor};
+      `}
+  }
+`
 
 const Root = styled.div`
   --border-def: 1px solid ${props => props.theme.colors.black};
@@ -69,15 +78,7 @@ export const Calendar: FC<CalendarProps> = ({ inspirations }) => {
 
   return (
     <Root>
-      {activeInspiration && (
-        <Global
-          styles={css`
-            :root {
-              background-color: ${activeInspiration.color};
-            }
-          `}
-        />
-      )}
+      <GlobalColor inspirationColor={activeInspiration?.color} />
       <CurrentMonth>
         <p>
           <span>Décembre</span>

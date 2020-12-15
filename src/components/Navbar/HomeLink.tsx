@@ -1,7 +1,6 @@
-import React, { FC, ComponentType } from 'react'
+import React, { FC } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import styled from '@emotion/styled'
-import { useTheme } from '@emotion/react'
+import styled, { useTheme } from 'styled-components'
 
 import RawLogo from 'assets/images/svgs/logo.svg'
 import { desktopStyle, desktopMediaQuery } from 'styles/responsive'
@@ -9,7 +8,7 @@ import { useWindowSize } from 'hooks/useWindowSize'
 import { useMediaQuery } from 'hooks/useMediaQuery'
 import { toPixels } from 'utils/layout'
 
-const Logo = styled(RawLogo as ComponentType)`
+const Logo = styled(RawLogo)`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -31,8 +30,7 @@ const Logo = styled(RawLogo as ComponentType)`
   }
 `
 
-// eslint-disable-next-line
-const Root = styled(AniLink as ComponentType<Record<any, any>>)<{
+const Root = styled(AniLink)<{
   activeScaleFactor: number
 }>`
   --animation-length: ${props => props.theme.nav.animationDuration};

@@ -1,4 +1,4 @@
-import { css } from '@emotion/react'
+import { css } from 'styled-components'
 
 import HelveticaNeueWoff2 from 'assets/fonts/HelveticaNeue/08b57253-2e0d-4c12-9c57-107f6c67bc49.woff2'
 import HelveticaNeueWoff from 'assets/fonts/HelveticaNeue/08edde9d-c27b-4731-a27f-d6cd9b01cd06.woff'

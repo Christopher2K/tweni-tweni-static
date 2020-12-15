@@ -1,5 +1,8 @@
-import { css, SerializedStyles } from '@emotion/react'
-import { CSSInterpolation } from '@emotion/serialize'
+import {
+  css,
+  SimpleInterpolation,
+  FlattenSimpleInterpolation,
+} from 'styled-components'
 
 export const breakpoint = {
   toDesktop: 768,
@@ -14,8 +17,8 @@ export const desktopMediaQuery =
 
 export function mobileStyle(
   template: TemplateStringsArray,
-  ...args: CSSInterpolation[]
-): SerializedStyles {
+  ...args: SimpleInterpolation[]
+): FlattenSimpleInterpolation {
   return css`
     @media screen and (${mobileMediaQuery}) {
       ${css(template, ...args)}
@@ -25,8 +28,8 @@ export function mobileStyle(
 
 export function desktopStyle(
   template: TemplateStringsArray,
-  ...args: CSSInterpolation[]
-): SerializedStyles {
+  ...args: SimpleInterpolation[]
+): FlattenSimpleInterpolation {
   return css`
     @media screen and (${desktopMediaQuery}) {
       ${css(template, ...args)}
