@@ -31,7 +31,7 @@ const Homepage: FC<HomepageProps> = ({ data }) => {
     <ThumbnailGrid>
       <SEO
         title="Tweni Tweni - Le Blog Culturel"
-        description="Découvez les thématiques que nous abordons au travers de nos articles"
+        description="Tweni Tweni, explore l’énergie créative de cette jeune génération insatiable, urbaine et connectée dans des articles et interviews"
       />
       {data.allPrismicArticle.nodes.map(({ data: article, uid }) => {
         const categoryText = article.categories

@@ -112,7 +112,7 @@ const GenesisPage: FC<GenesisPageProps> = ({ data: { prismicGenesis } }) => {
     <Root>
       <SEO
         title="Tweni Tweni - La genèse"
-        description="Découvrez comment notre projet a commencé..."
+        description="Du design à la musique en passant par la mode et la photographie, nous voulons vous faire découvrir ces créations qui observent, critiquent, interpellent, enflamment notre société et nous inspirent."
       />
       <Left
         dangerouslySetInnerHTML={{ __html: prismicGenesis.data.contact.html }}

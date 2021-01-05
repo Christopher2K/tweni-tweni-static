@@ -70,7 +70,7 @@ const InspirationsPage: FC<InspirationsPageProps> = ({ data }) => {
     <PageRoot>
       <SEO
         title="Tweni Tweni - Le calendrier des inspirations"
-        description="Des artistes nous ont influencé tout au long de l'année, découvrez les dans ce calendrier 2020 !"
+        description="On vous révèle notre calendrier de l’avent 2020 où vous pourrez découvrir les artistes et projets, coup cœur qui ont illuminé notre année."
       />
       <PageDescription>
         {data.prismicInspirationPage.data.text.text}

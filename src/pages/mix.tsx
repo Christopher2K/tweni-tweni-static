@@ -35,7 +35,7 @@ const MixPage: FC<MixPageProps> = ({ data }) => {
     <PageRoot>
       <SEO
         title="Tweni Tweni - Nos mix"
-        description="Découvez nos playlists afin de rythmer vos semaines !"
+        description="Chaque jeudi, on vous dévoile les playlists concoctées par nos DJ préférés. Hip-hop, Rap, R&b, Soul, Dancehall… Il y en a pour tous les goûts!"
       />
       <PageDescription>{data.prismicMixPage.data.text.text}</PageDescription>
       <ThumbnailGrid>
